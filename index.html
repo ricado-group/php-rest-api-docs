@@ -44,6 +44,16 @@
 				margin:0;
 				background: #fafafa;
 			}
+
+			.swagger-ui .topbar
+			{
+				background: #1B3752;
+			}
+
+			.swagger-ui .topbar .download-url-wrapper
+			{
+				margin-block-end: 0em;
+			}
 		</style>
     </head>
     <body>
@@ -67,6 +77,7 @@
 					'urls.primaryName': "Gen 4 REST API - Staging",
                     dom_id: '#swagger-ui',
                     deepLinking: true,
+					filter: true,
                     presets: [
                         SwaggerUIBundle.presets.apis,
                         SwaggerUIStandalonePreset
@@ -78,6 +89,17 @@
                 });
 
                 window.ui = ui
+
+				if(document.getElementsByClassName('link').length > 0)
+				{
+					let logoLink = document.getElementsByClassName('link')[0];
+
+					if(logoLink.children.length > 0)
+					{
+						logoLink.children[0].alt = "RICADO";
+						logoLink.children[0].src = "./images/ricado_logo_green.svg";
+					}
+				}
             }
         </script>
     </body>
