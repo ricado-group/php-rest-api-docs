@@ -1,11 +1,11 @@
 <html>
     <head>
-		<title>RICADO Gen 4 REST API</title>
+		<title>RICADO REST API Documentation</title>
 
 		<meta name="apple-mobile-web-app-title" content="RICADO" />
 		<meta name="application-name" content="RICADO" />
 		<meta name="msapplication-TileColor" content="#1b3752" />
-		<meta name="msapplication-TileImage" content="/images/icon/mstile-144x144.png" />
+		<meta name="msapplication-TileImage" content="./images/icon/mstile-144x144.png" />
 		<meta name="theme-color" content="#ffffff" />
 
 		<link rel="apple-touch-icon" sizes="57x57" href="./images/icon/apple-touch-icon-57x57.png" />
@@ -54,9 +54,17 @@
 
         <script>
             window.onload = function () {
-                // Begin Swagger UI call region
+                // SwaggerUI Configuration: https://github.com/swagger-api/swagger-ui/blob/master/docs/usage/configuration.md
                 const ui = SwaggerUIBundle({
-                    url: "https://api-staging.ricado.co.nz/api/4.0/openapi.json",
+					urls: [
+						{url: "https://api-staging.ricado.co.nz/api/4.0/openapi.json", name: "Gen 4 REST API - Staging"},
+						{url: "https://api.ricado.co.nz/api/4.0/openapi.json", name: "Gen 4 REST API - Production"},
+						{url: "https://api-staging.ricado.co.nz/api/3.0/openapi.json", name: "Gen 3 REST API - Staging"},
+						{url: "https://api.ricado.co.nz/api/3.0/openapi.json", name: "Gen 3 REST API - Production"},
+						{url: "https://api.ricado.co.nz/api/2.5/openapi.json", name: "Gen 2.5 REST API - Production"},
+						{url: "https://api.ricado.co.nz/api/2.0/openapi.json", name: "Gen 2 REST API - Production"},
+					],
+					'urls.primaryName': "Gen 4 REST API - Staging",
                     dom_id: '#swagger-ui',
                     deepLinking: true,
                     presets: [
