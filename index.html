@@ -67,15 +67,16 @@
                 // SwaggerUI Configuration: https://github.com/swagger-api/swagger-ui/blob/master/docs/usage/configuration.md
                 const ui = SwaggerUIBundle({
 					urls: [
-						{url: "https://api.ricado.co.nz/api/4.0/openapi.json", name: "Gen 4 REST API - Production"},
-						{url: "https://api-staging.ricado.co.nz/api/4.0/openapi.json", name: "Gen 4 REST API - Staging"},
-						{url: "https://api.ricado.co.nz/api/3.0/openapi.json", name: "Gen 3 REST API - Production"},
-						{url: "https://api-staging.ricado.co.nz/api/3.0/openapi.json", name: "Gen 3 REST API - Staging"},
+						{url: "https://api.ricado.co.nz/api/4.0/openapi.json?rand=" + Math.random().toString(), name: "Gen 4 REST API - Production"},
+						{url: "https://api-staging.ricado.co.nz/api/4.0/openapi.json?rand=" + Math.random().toString(), name: "Gen 4 REST API - Staging"},
+						{url: "https://api.ricado.co.nz/api/3.0/openapi.json?rand=" + Math.random().toString(), name: "Gen 3 REST API - Production"},
+						{url: "https://api-staging.ricado.co.nz/api/3.0/openapi.json?rand=" + Math.random().toString(), name: "Gen 3 REST API - Staging"},
 					],
 					'urls.primaryName': "Gen 4 REST API - Production",
                     dom_id: '#swagger-ui',
                     deepLinking: true,
 					filter: true,
+					persistAuthorization: true,
                     presets: [
                         SwaggerUIBundle.presets.apis,
                         SwaggerUIStandalonePreset
