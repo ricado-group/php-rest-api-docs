@@ -63,7 +63,8 @@
 		<script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-standalone-preset.js"></script>
 
         <script>
-            window.onload = function () {
+            window.onload = function ()
+			{
                 // SwaggerUI Configuration: https://github.com/swagger-api/swagger-ui/blob/master/docs/usage/configuration.md
                 const ui = SwaggerUIBundle({
 					urls: [
@@ -89,18 +90,22 @@
                 });
 
                 window.ui = ui;
+            }
 
+			window.addEventListener('DOMContentLoaded', () =>
+			{
 				const logoLink = document.querySelector('div.topbar-wrapper a.link');
 
 				if(logoLink instanceof Element)
 				{
+					console.log(logoLink);
 					const logoImage = new Image(101, 40);
 					logoImage.src = "./images/ricado_logo_green.svg";
 					logoImage.alt = "RICADO";
 
 					logoLink.replaceChildren(logoImage);
 				}
-            }
+			});
         </script>
     </body>
 </html>
