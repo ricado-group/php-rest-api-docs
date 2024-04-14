@@ -105,23 +105,21 @@
                 });
 
                 window.ui = ui;
-            }
 
-			window.addEventListener('DOMContentLoaded', () =>
-			{
-				const logoLink = document.querySelector('div.topbar-wrapper a.link');
-				console.log(logoLink);
-
-				if(logoLink instanceof Element)
+				setTimeout(() =>
 				{
-					console.log(logoLink);
-					const logoImage = new Image(101, 40);
-					logoImage.src = "./images/ricado_logo_green.svg";
-					logoImage.alt = "RICADO";
+					const logoLink = document.querySelector('div.topbar-wrapper a.link');
 
-					logoLink.replaceChildren(logoImage);
-				}
-			});
+					if(logoLink instanceof Element)
+					{
+						const logoImage = new Image(101, 40);
+						logoImage.src = "./images/ricado_logo_green.svg";
+						logoImage.alt = "RICADO";
+
+						logoLink.replaceChildren(logoImage);
+					}
+				}, 500);
+            }
         </script>
     </body>
 </html>
