@@ -88,17 +88,17 @@
 					layout: "StandaloneLayout"
                 });
 
-                window.ui = ui
+                window.ui = ui;
 
-				if(document.getElementsByClassName('link').length > 0)
+				const logoLink = document.querySelector('div.topbar-wrapper a.link');
+
+				if(logoLink instanceof Element)
 				{
-					let logoLink = document.getElementsByClassName('link')[0];
+					const logoImage = new Image(101, 40);
+					logoImage.src = "./images/ricado_logo_green.svg";
+					logoImage.alt = "RICADO";
 
-					if(logoLink.children.length > 0)
-					{
-						logoLink.children[0].alt = "RICADO";
-						logoLink.children[0].src = "./images/ricado_logo_green.svg";
-					}
+					logoLink.replaceChildren(logoImage);
 				}
             }
         </script>
