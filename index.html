@@ -86,7 +86,22 @@
                     plugins: [
                         SwaggerUIBundle.plugins.DownloadUrl
                     ],
-					layout: "StandaloneLayout"
+					layout: "StandaloneLayout",
+					onComplete: () =>
+					{
+						const logoLink = document.querySelector('div.topbar-wrapper a.link');
+						console.log(logoLink);
+
+						if(logoLink instanceof Element)
+						{
+							console.log(logoLink);
+							const logoImage = new Image(101, 40);
+							logoImage.src = "./images/ricado_logo_green.svg";
+							logoImage.alt = "RICADO";
+
+							logoLink.replaceChildren(logoImage);
+						}
+					},
                 });
 
                 window.ui = ui;
@@ -95,6 +110,7 @@
 			window.addEventListener('DOMContentLoaded', () =>
 			{
 				const logoLink = document.querySelector('div.topbar-wrapper a.link');
+				console.log(logoLink);
 
 				if(logoLink instanceof Element)
 				{
