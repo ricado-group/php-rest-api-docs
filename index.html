@@ -90,11 +90,9 @@
 					onComplete: () =>
 					{
 						const logoLink = document.querySelector('div.topbar-wrapper a.link');
-						console.log(logoLink);
 
 						if(logoLink instanceof Element)
 						{
-							console.log(logoLink);
 							const logoImage = new Image(101, 40);
 							logoImage.src = "./images/ricado_logo_green.svg";
 							logoImage.alt = "RICADO";
@@ -118,7 +116,7 @@
 
 						logoLink.replaceChildren(logoImage);
 					}
-				}, 500);
+				}, 100);
             }
         </script>
     </body>
